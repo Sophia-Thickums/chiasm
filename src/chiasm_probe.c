@@ -1,5 +1,5 @@
 /*
- * dma_buf_bridge_probe.c — correctness proof for cross-device GPU handoff.
+ * chiasm_probe.c — correctness proof for cross-device GPU handoff.
  *
  * Question: can a buffer in GPU A's VRAM be handed to GPU B as a dma_buf
  * file descriptor, bound there as an ordinary buffer, and read back
@@ -132,11 +132,11 @@ static void *map_mem(Ctx *c, VkDeviceMemory m, VkDeviceSize sz) {
 }
 
 int main(void) {
-    printf("== dma-buf-bridge probe: cross-device handoff (Linux/Vulkan) ==\n");
+    printf("== chiasm probe: cross-device handoff (Linux/Vulkan) ==\n");
     printf("== buffer size: %.1f MiB\n", BUFFER_BYTES / 1048576.0);
 
     VkApplicationInfo ai = { .sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
-        .pApplicationName = "dma-buf-bridge", .apiVersion = VK_API_VERSION_1_3 };
+        .pApplicationName = "chiasm", .apiVersion = VK_API_VERSION_1_3 };
     VkInstanceCreateInfo ici = { .sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO,
         .pApplicationInfo = &ai };
     VkInstance inst;

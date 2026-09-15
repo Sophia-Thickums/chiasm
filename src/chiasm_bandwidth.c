@@ -1,7 +1,7 @@
 /*
- * dma_buf_bridge_bandwidth.c — cost characterisation for the dma_buf bridge.
+ * chiasm_bandwidth.c — cost characterisation for the dma_buf bridge.
  *
- * Follow-up to dma_buf_bridge_probe.c. That proves the handoff works.
+ * Follow-up to chiasm_probe.c. That proves the handoff works.
  * This measures whether it is useful: sustained throughput across the
  * bridge, both directions, at frame scale and larger.
  *
@@ -100,12 +100,12 @@ int main(int argc, char **argv) {
     VkDeviceSize SZ = (argc > 1 ? (VkDeviceSize)atol(argv[1]) : 64) * 1024 * 1024;
     int ITER = argc > 2 ? atoi(argv[2]) : 30;
 
-    printf("== dma-buf-bridge bandwidth probe (Linux/Vulkan)\n");
+    printf("== chiasm bandwidth probe (Linux/Vulkan)\n");
     printf("== buffer %.0f MiB, %d iterations per direction\n", SZ / 1048576.0, ITER);
     printf("== frame-scale reference: 1080p RGBA = 8.29 MiB\n\n");
 
     VkApplicationInfo ai = { .sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
-        .pApplicationName = "dma-buf-bridge", .apiVersion = VK_API_VERSION_1_3 };
+        .pApplicationName = "chiasm", .apiVersion = VK_API_VERSION_1_3 };
     VkInstanceCreateInfo ici = { .sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO, .pApplicationInfo = &ai };
     VkInstance inst; CHECK(vkCreateInstance(&ici, NULL, &inst), "instance");
 

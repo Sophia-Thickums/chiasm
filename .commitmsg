@@ -1,0 +1,13 @@
+Rename to chiasm; add host-staged baseline and the negative result it produced
+
+chiasm (named for the optic chiasm: two signal paths crossing without merging)
+replaces the earlier dma-buf-bridge name, which was free but weak.
+
+Adds src/classic_hop.c -- the classic D2H -> host memcpy -> H2D path, measured
+on the same hardware and the same payload. On a discrete+integrated pair the
+classic path is FASTER: 5.80 ms vs ~10.7 ms for 64 MiB, because the iGPU shares
+system RAM, so the host leg is nearly free while the cross-PCIe peer read is not.
+The README now leads with that result.
+
+chiasm's remaining advantages are architectural rather than throughput:
+no CPU staging, no second copy, and zero bytes through system RAM.
