@@ -9,5 +9,5 @@ if [ ! -d "Vulkan-Headers-$V" ]; then
   tar xzf vh.tar.gz && rm -f vh.tar.gz
 fi
 mkdir -p Vulkan-Headers
-ln -sfn "Vulkan-Headers-$V/include" Vulkan-Headers/include
+ln -sfn "../Vulkan-Headers-$V/include" Vulkan-Headers/include
 echo "Headers ready: vendor/Vulkan-Headers/include"
