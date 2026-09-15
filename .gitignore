@@ -2,3 +2,4 @@ build/
 vendor/Vulkan-Headers-*/
 vendor/vh.tar.gz
 vendor/Vulkan-Headers/include
+.commitmsg
