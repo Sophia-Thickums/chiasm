@@ -180,3 +180,16 @@ No NVIDIA code, binaries, or licensed DLLs are used or required.
 ## License
 
 MIT. See `LICENSE`.
+
+## Related
+
+- **gpu-attrib** — <https://github.com/Sophia-Thickums/gpu-attrib> — which GPU is *actually*
+  doing the work, by kernel engine-time counters.
+- **cf-probe** — <https://github.com/Sophia-Thickums/cf-probe> — can two cards be made to
+  cooperate at the presentation layer at all? One Vulkan call, yes/no, ~2 seconds.
+- **chiasm** — <https://github.com/Sophia-Thickums/chiasm> — cross-GPU `dma_buf` handoff with
+  no host copy, and the benchmark that beat its own thesis.
+
+**Long-form notes:** *Which GPU is actually rendering?* — the method, the two wrong answers,
+and one recorded belief that did not survive measurement:
+<https://github.com/Sophia-Thickums/gpu-attrib/blob/main/docs/WHICH_GPU_IS_RENDERING.md>
